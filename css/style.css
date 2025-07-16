@@ -1,0 +1,170 @@
+/* Global Styles */
+:root {
+    --primary-color: #4361ee;
+    --secondary-color: #3f37c9;
+    --accent-color: #4895ef;
+    --text-color: #2b2d42;
+    --light-gray: #f8f9fa;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: var(--text-color);
+}
+
+/* Hero Section */
+.hero-section {
+    background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
+    color: white;
+    padding: 100px 0;
+    margin-bottom: 50px;
+}
+
+.hero-section h1 {
+    font-size: 3.5rem;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.hero-section p {
+    font-size: 1.2rem;
+    margin-bottom: 30px;
+}
+
+/* Book Cards */
+.book-card {
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+    margin-bottom: 30px;
+}
+
+.book-card:hover {
+    transform: translateY(-5px);
+}
+
+.book-card img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    border-radius: 10px 10px 0 0;
+}
+
+.book-card .card-body {
+    padding: 20px;
+}
+
+/* PDF Viewer */
+#pdf-viewer {
+    height: 80vh;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+/* PDF Viewer Styles */
+.modal-xl {
+    max-width: 95vw;
+}
+
+.pdf-container {
+    display: flex;
+    justify-content: center;
+    min-height: 70vh;
+    background-color: #f8f9fa;
+    padding: 1rem;
+    overflow-y: auto;
+}
+
+.pdf-container canvas {
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    background-color: white;
+}
+
+.pdf-controls {
+    border-bottom: 1px solid #dee2e6;
+    margin: -1rem -1rem 1rem -1rem;
+    padding: 1rem;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    background-color: white;
+}
+
+/* Add smooth transitions for zoom */
+.pdf-container canvas {
+    transition: transform 0.2s ease-in-out;
+}
+
+/* Make the modal scrollable */
+.modal-body {
+    max-height: 85vh;
+    overflow-y: auto;
+    padding: 0;
+}
+
+/* Style the page counter */
+#current-page {
+    font-weight: bold;
+    color: #0d6efd;
+}
+
+/* Support Form */
+#support-form {
+    background: white;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Admin Panel */
+.list-group-item {
+    border: none;
+    padding: 15px 20px;
+    margin-bottom: 5px;
+    border-radius: 5px !important;
+}
+
+.list-group-item.active {
+    background-color: var(--primary-color);
+}
+
+.list-group-item i {
+    margin-right: 10px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .hero-section {
+        padding: 50px 0;
+        text-align: center;
+    }
+
+    .hero-section h1 {
+        font-size: 2.5rem;
+    }
+
+    .hero-section img {
+        margin-top: 30px;
+    }
+
+    #pdf-viewer {
+        height: 60vh;
+    }
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.book-card {
+    animation: fadeIn 0.5s ease-out forwards;
+}
